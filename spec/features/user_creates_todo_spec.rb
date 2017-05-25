@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'User creates todo' do
   scenario 'successfully' do
-    visit root_path
+    sign_in
 
     click_on 'Add a new todo'
     fill_in 'Title', with: 'Get bread'
@@ -12,7 +12,7 @@ feature 'User creates todo' do
   end
 
   scenario 'unsuccsessfully' do
-    visit root_path
+    sign_in
 
     click_on 'Add a new todo'
     click_on 'Submit'
