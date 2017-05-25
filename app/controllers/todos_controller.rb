@@ -8,8 +8,12 @@ class TodosController < ApplicationController
   end
 
   def create
-    Todo.create(todo_params)
-    redirect_to todos_path
+    @todo = Todo.create(todo_params)
+    if @todo.save
+      redirect_to todos_path
+    else
+      redirect_to new_todo_path, alert: 'Error: todo must have a title.'
+    end
   end
 
   private
