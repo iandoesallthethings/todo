@@ -10,6 +10,11 @@
 
   <body>
     <div id='navigation'>
+      <% if signed_in? %>
+        <span class='welcome'>Welcome, <%= session[:current_email] %></span>
+        <%= link_to "Sign out", { controller: 'sessions', action: 'destroy' }, method: :delete %>
+      <% end %>
+
       <%= link_to "Home", root_path %>
     </div>
 
