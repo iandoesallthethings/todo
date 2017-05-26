@@ -4,14 +4,13 @@ class SessionsController < ApplicationController
   end
 
   def create
-    session[:current_email] = params[:session][:email]
+    sign_in_as params[:session][:email]
     redirect_to root_path
   end
 
   def destroy
     reset_session
-    session[:current_email] = nil
+    sign_in_as = nil
     redirect_to new_session_path
   end
-
 end
