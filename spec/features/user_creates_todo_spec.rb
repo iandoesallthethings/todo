@@ -1,17 +1,14 @@
 require 'rails_helper'
 
-feature 'User creates todo' do
+feature 'User tries to create todo' do
   scenario 'successfully' do
     sign_in
+    create_todo 'Get bread'
 
-    click_on 'Add a new todo'
-    fill_in 'Title', with: 'Get bread'
-    click_on 'Submit'
-
-    expect(page).to have_css '.todos li', text: 'Get bread'
+    expect(page).to display_todo "Get bread"
   end
 
-  scenario 'unsuccsessfully' do
+  scenario 'without a title' do
     sign_in
 
     click_on 'Add a new todo'
