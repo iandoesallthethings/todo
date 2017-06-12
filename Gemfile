@@ -7,7 +7,7 @@ end
 
 
 gem 'rails', '~> 5.1.1'
-gem 'sqlite3'
+gem 'pg'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -18,7 +18,7 @@ gem 'jbuilder', '~> 2.5'
 
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'sqlite3'
   gem 'rspec-rails', '~> 3.6.0'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
