@@ -11,5 +11,5 @@ begin
   RSpec::Core::RakeTask.new(:spec) do |t|
     t.verbose = false
   end
-  rescure LoadError #if rspec not available
+  rescue LoadError #if rspec not available
 end
